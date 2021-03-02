@@ -1,0 +1,10 @@
+NULLIF ( a , b ) 
+- a와 b의 값이 동일하면 NULL을, 그렇지 않다면 a를 반환 
+- Case when a = b  then null else a end 
+
+NVL (col , 0) 
+- null값을 다른 값(여기에서는 0 )으로 변경. 
+
+COALESCE ( expr1, expr2, expr3, ...)
+- expr1이 NULL이 아니면 expr값을 반환, 그렇지 않다면 COALESCE(expr2, expr3,...)값을 반환
+- NVL과 비슷하지만 여러 개의 열의 NULL 여부를 확인가능하다는 차이가 있다. (재귀식으로) 
