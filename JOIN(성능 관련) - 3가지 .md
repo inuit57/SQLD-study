@@ -1,6 +1,6 @@
 출처 : https://needjarvis.tistory.com/162
 
-1) Nested Loop JOIN 
+<H1>1) Nested Loop JOIN</H1> 
 - 2개 이상의 테이블에서 하나의 집합을 기준으로 순차적으로 상대방 Row를 결합하여 원하는 결과를 조합하는 방식
 - 먼저 선행 테이블의 처리 범위를 하나씩 액세스하면서 추출된 값으로 연결할 테이블을 조인한다
 ```
@@ -55,7 +55,7 @@ Plan hash value: 4192419542
 - 테이블 중 Row수가 적은 쪽을 Driven 테이블로 설정
 
 
-2) Sort Merge Join
+<H1>2) Sort Merge Join</H1>
 >Sort Merge Join의 개념
 - 조인의 대상범위가 넓을 경우 발생하는 Random Access를 줄이기 위한 경우나 연결고리에 마땅한 인덱스가 존재하지 않을 경우 해결하기 위한 조인 방안
 - 양쪽 테이블의 처리범위를 각자 Access하여 정렬한 결과를 차례로 Scan하면서 연결고리의 조건으로 Merge하는 방식
@@ -101,7 +101,7 @@ Plan hash value: 1407029907
 - Sorting 메모리에 위치하는 대상은 join key뿐만 아니라 Select list도 포함되므로 불필요한 select 항목 제거
 
 
-3) Hash Join
+<H1>3) Hash Join</H1>
 >Hash Join의 개념
 
 - 해싱 함수(Hashing Function) 기법을 활용하여 조인을 수행하는 방식(해싱 함수는 직접적인 연결을 담당하는 것이 아니라 연결될 대상을 특정 지역(partition)에 모아두는 역할만을 담당
