@@ -1,0 +1,19 @@
+출처 : https://velog.io/@cyanred9/SQL-Recursive
+
+WITH recursive CTE as( #재귀쿼리 세팅
+    select 0 as HOUR #초기값 설정
+    union all #위 쿼리와 아래 쿼리의 값을 연산
+    select HOUR+1 from CTE #하나씩 불려 나감 
+    where HOUR < 23 #반복을 멈추는 용도
+)
+
+
+재귀쿼리를 만드는 쿼리. 
+사용법은 위를 참고하면 된다. 
+
+for문 돌리듯이 하나씩 늘여나가는 식으로 
+값을 채워넣어줄 수 있다. 
+
+관련 예제
+프로그래머스 입양시간구하기(2)
+https://programmers.co.kr/learn/courses/30/lessons/59413
