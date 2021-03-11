@@ -1,0 +1,62 @@
+https://androphil.tistory.com/166
+
+여기 글이 설명이 잘 되어있다. 
+
+요약한다면 
+
+
+ROLLUP ( 컬럼 1, 컬럼 2) 는 
+컬럼1로 그룹을 만들어서 찍어주고 각 그룹의 마지막에 해당 그룹의 총합을 찍어준다. 
+(이때 컬럼2는 비어있다.) 
+------------------------------------------------------------------------------
+DNAME JOB SAL EMP_COUNT
+ACCOUNTING CLERK 1300 1 
+ACCOUNTING MANAGER 2450 1 
+ACCOUNTING PRESIDENT 5000 1 
+ACCOUNTING 8750 3 --> ACCOUNTING 부서의 급여 합계와 전체 사원 수 
+RESEARCH ANALYST 6000 2
+RESEARCH CLERK 1900 2 
+RESEARCH MANAGER 2975 1 
+RESEARCH 10875 5 --> RESEARCH 부서의 급여 합계와 전체 사원 수 
+SALES MANAGER 28500 1 
+SALES SALESMAN 4000 3 
+SALES 32500 4 --> SALES부서의 급여 합계와 전체 사원 수 52125 12 ->
+
+-------------------------------------------------------------------------------------------
+
+CUBE( 컬럼1, 컬럼2)의 경우 
+마지막 부분 전까지는 ROLLUP과 동일하나 
+마지막 부분에서 컬럼2에 대한 그룹핑을 수행해서 붙여준다. 
+
+--------------
+CUBE operator
+
+  
+SQL> SELECT b.dname, a.job, SUM(a.sal) sal, COUNT(a.empno) emp_count
+     FROM emp a, dept b
+     WHERE a.deptno = b.deptno
+     GROUP BY CUBE(b.dname, a.job)
+
+DNAME      JOB               SAL  EMP_COUNT
+---------- ---------- ---------- ----------
+ACCOUNTING  CLERK            1300          1
+ACCOUNTING  MANAGER          2450          1
+ACCOUNTING  PRESIDENT        5000          1
+ACCOUNTING                   8750          3 --> ACCOUNTING 부서의 직업별 급여의 총계와 사원 수.
+RESEARCH    ANALYST          6000          2
+RESEARCH    CLERK            1900          2
+RESEARCH    MANAGER          2975          1
+RESEARCH                    10875          5 --> RESEARCH 부서의 직업별 급여의 총계와 사원 수.
+SALES       MANAGER         28500          1
+SALES       SALESMAN         4000          3
+SALES                       32500          4 --> SALES 부서의 직업별 급여 총계와 사원 수.
+            ANALYST          6000          2
+            CLERK            3200          3
+            MANAGER         33925          3
+            PRESIDENT        5000          1
+            SALESMAN         4000          3   
+                            52125         12  --> 직업별로 급여의  총계와 사원 수.
+
+
+
+출처: https://androphil.tistory.com/166 [소림사의 홍반장!]
