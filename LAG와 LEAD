@@ -1,0 +1,20 @@
+LAG 함수 : 이전 로우의 값 반환
+
+LEAD 함수 : 이후 로우의 값 반환
+
+ 
+ 
+ LAG ( expr, offset, default ) OVER ( ORDER BY 절 )
+
+ LEAD ( expr, offset, default ) OVER ( ORDER BY 절 )
+
+  LAG ( expr, offset, default ) OVER ( PARTITION BY 절 )
+
+ LEAD ( expr, offset, default ) OVER ( PARTITION BY 절 )
+ 
+ ---
+ 보통 order by 절을 사용해서 순서를 지정해준다. 
+ offset은 지정해주지 않은 경우 기본값은 1이 된다. 
+ default는 값이 없는 경우 여기에 지정해준 값으로 출력해준다. 
+
+ 
