@@ -1,0 +1,21 @@
+OVER함수는 ORDER BY, GROUP BY 서브쿼리를 개선하기 위해 나온 함수라고 할 수 있습니다.
+
+
+
+
+ 1. OVER() 함수
+ - 전체 행을 반환한다. 
+ 
+ - 사용 예시 
+ count(*) over() : 전체행 갯수 카운트 
+ COUNT(*)OVER(PARTITION BY 컬럼) : 그룹 단위로 나누어서 카운팅
+ 
+ 2.RANK() OVER( ORDER BY col_name ) 
+ - order by로 지정한 컬럼을 기준 삼아서 rank()를 매겨서 추가해준다. 
+ 
+ 
+ 3. OVER() 에 사용되는 OPTION
+    1. PARTITION BY
+    2. ORDER BY DESC
+    3. NULLS FIRST : NULL 데이터를 먼저 출력.
+    4. NULLS LAST : NULL 데이터를 나중에 출력.
