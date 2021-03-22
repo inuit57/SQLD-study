@@ -1,0 +1,13 @@
+FROM - WHERE - GROUP BY - HAVING - SELECT - ORDER BY 
+
+기초적인 것이다. 
+
+1. From : 어디에서
+2. Where : 어떤 것을
+3. Group by : 그룹핑을 해서 
+4. Having : 그룹의 조건 설정
+5. Select : 가져온 것들 중에서 추려내기 
+6. Order by : select된 것들의 순서 설정. 
+
+
+---- 
