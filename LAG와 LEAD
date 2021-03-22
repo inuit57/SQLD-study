@@ -1,14 +1,17 @@
 LAG 함수 : 이전 로우의 값 반환
-
 LEAD 함수 : 이후 로우의 값 반환
 
+LAG(col_name) over (order by asc) == lead(col_name) over (order by desc)
+정렬 방향을 거꾸로 해준다면 같은 의미가 된다. 
+
+--- 
  
  
  LAG ( expr, offset, default ) OVER ( ORDER BY 절 )
 
  LEAD ( expr, offset, default ) OVER ( ORDER BY 절 )
 
-  LAG ( expr, offset, default ) OVER ( PARTITION BY 절 )
+ LAG ( expr, offset, default ) OVER ( PARTITION BY 절 )
 
  LEAD ( expr, offset, default ) OVER ( PARTITION BY 절 )
  
