@@ -6,7 +6,7 @@ SELECT SUM(AA) + SUM(BB) + SUM(CC) + SUM(DD) + SUM(EE) + SUM(FF) SUM1,
 
 
 ORACLE SUM 함수는 단일 행을 계산할 때는 NULL 값을 제외해주지만
-두 컬럼 이상일 때는 NULL 이 있는 로우를 제외시키고 계산하여 값이 다르게 나오게 된다.
+<b>두 컬럼 이상일 때</b>는 NULL 이 있는 로우를 제외시키고 계산하여 값이 다르게 나오게 된다.
 
 
 따라서 같은 값이 나오게 하려면 NVL 처리를 해주어야만 한다.
